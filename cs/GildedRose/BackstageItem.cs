@@ -1,14 +1,18 @@
 namespace GildedRoseKata;
 
-public class CheeseItem : Item
+public class BackstageItem : Item
 {
     public override void UpdateQuality()
     {
-        if (Quality < 50)
+        if (SellIn <= 0)
+        {
+            Quality = 0;
+        } else
         {
             Quality += SellIn switch
             {
-                <= 0 => 2,
+                <= 5 => 3,
+                <= 10 => 2,
                 _ => 1
             };
 

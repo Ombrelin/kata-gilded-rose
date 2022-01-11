@@ -9,7 +9,7 @@ public class ItemFactoryTest
     public void Build_CheeseName_BuildsCheeseItem()
     {
         // When
-        Item item = ItemFactory.BuildItem(new Item(){Name = "Aged Brie"});
+        Item item = ItemFactory.BuildItem(new Item { Name = "Aged Brie" });
 
         // When
         Assert.IsType<CheeseItem>(item);
@@ -19,7 +19,7 @@ public class ItemFactoryTest
     public void Build_BackstageName_BuildsBackstageItem()
     {
         // When
-        Item item = ItemFactory.BuildItem(new Item(){Name = "Backstage passes to a TAFKAL80ETC concert"});
+        Item item = ItemFactory.BuildItem(new Item { Name = "Backstage passes to a TAFKAL80ETC concert" });
 
         // When
         Assert.IsType<BackstageItem>(item);
@@ -29,9 +29,9 @@ public class ItemFactoryTest
     public void Build_LegendaryName_BuildsLegendaryItem()
     {
         // When
-        Item item = ItemFactory.BuildItem(new Item(){Name = "Sulfuras, Hand of Ragnaros"});
+        Item item = ItemFactory.BuildItem(new Item { Name = "Sulfuras, Hand of Ragnaros" });
 
         // When
-        Assert.IsType<LegendayItem>(item);
+        Assert.IsType<LegendaryItem>(item);
     }
 }

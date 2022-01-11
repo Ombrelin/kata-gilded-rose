@@ -7,20 +7,24 @@ namespace GildedRoseKata
         public int SellIn { get; set; }
         public int Quality { get; set; }
 
-        public virtual void UpdateQualityAndSellIn()
+        public virtual void UpdateQuality()
         {
-            SellIn --;
             if (Quality > 0)
             {
                 if (SellIn >= 0)
                 {
-                    Quality--;
+                    Quality -= 1;
                 }
                 else
                 {
                     Quality -= 2;
                 }
             }
+        }
+
+        public void UpdateSellIn()
+        {
+            SellIn -= 1;
         }
     }
 }
