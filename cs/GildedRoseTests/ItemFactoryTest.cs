@@ -34,4 +34,14 @@ public class ItemFactoryTest
         // When
         Assert.IsType<LegendaryItemStrategy>(item);
     }
+
+    [Fact]
+    public void Build_ConjuredName_BuildsConjuredItem()
+    {
+        // When
+        var item = StrategyFactory.BuildStrategy(new Item { Name = "Conjured item" });
+
+        // When
+        Assert.IsType<ConjuredItemStrategy>(item);
+    }
 }

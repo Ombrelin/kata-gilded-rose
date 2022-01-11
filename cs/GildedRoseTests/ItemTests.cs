@@ -135,7 +135,7 @@ public class ItemTests
     public void UpdateQuality_WithLegendaryItemAndNegativeSellIn_QualityDoesNotChange()
     {
         // Given
-        var item = new Item() { Name = "backstage", SellIn = -1, Quality = 80 };
+        var item = new Item() { Name = "legendary", SellIn = -1, Quality = 80 };
         var strategy = new LegendaryItemStrategy();
 
         // When
@@ -149,7 +149,7 @@ public class ItemTests
     public void UpdateSellIn_WithLegendaryItem_SellInDoesNotChange()
     {
         // Given
-        var item = new Item() { Name = "backstage", SellIn = -1, Quality = 80 };
+        var item = new Item() { Name = "legendary", SellIn = -1, Quality = 80 };
         var strategy = new LegendaryItemStrategy();
 
         // When
@@ -157,6 +157,20 @@ public class ItemTests
 
         // Then
         Assert.Equal(-1, item.SellIn);
+    }
+
+    [Fact]
+    public void UpdateQuality_WithConjuredItemAndNegativeSellIn_QualityDecreasedTwiceFaster()
+    {
+        // Given
+        var item = new Item() { Name = "conjured", SellIn = -1, Quality = 80 };
+        var strategy = new ConjuredItemStrategy();
+
+        // When
+        strategy.UpdateQuality(item);
+
+        // Then
+        Assert.Equal(78, item.Quality);
     }
 
 }

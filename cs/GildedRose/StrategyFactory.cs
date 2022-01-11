@@ -8,6 +8,7 @@ public class StrategyFactory
             "Aged Brie" => new CheeseItemStrategy(),
             "Backstage passes to a TAFKAL80ETC concert" => new BackstageItemStrategy(),
             "Sulfuras, Hand of Ragnaros" => new LegendaryItemStrategy(),
+            "Conjured item" => new ConjuredItemStrategy(),
             _ => new DefaultItemStrategy()
         };
 }
