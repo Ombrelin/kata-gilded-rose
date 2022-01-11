@@ -6,7 +6,7 @@ public class DefaultItemStrategy : ItemStrategy
     {
         if (item.Quality > 0)
         {
-            if (item.SellIn >= 0)
+            if (item.SellIn > 0)
             {
                 item.Quality -= 1;
             }
