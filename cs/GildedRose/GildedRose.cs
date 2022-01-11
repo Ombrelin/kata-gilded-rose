@@ -17,15 +17,13 @@ namespace GildedRoseKata
 
         public void UpdateQuality()
         {
-            var newItems = new List<Item>();
-            foreach (var item in Items.Select(ItemFactory.BuildItem))
+            foreach (var item in Items)
             {
-                item.UpdateQuality();
-                item.UpdateSellIn();
-                newItems.Add(item);
+                var strategy = StrategyFactory.BuildStrategy(item);
+                strategy.UpdateQuality(item);
+                strategy.UpdateSellIn(item);
             }
 
-            Items = new List<Item>(newItems.ToList());
         }
     }
 }

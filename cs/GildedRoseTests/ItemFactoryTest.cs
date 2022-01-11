@@ -9,29 +9,29 @@ public class ItemFactoryTest
     public void Build_CheeseName_BuildsCheeseItem()
     {
         // When
-        Item item = ItemFactory.BuildItem(new Item { Name = "Aged Brie" });
+        var item = StrategyFactory.BuildStrategy(new Item { Name = "Aged Brie" });
 
         // When
-        Assert.IsType<CheeseItem>(item);
+        Assert.IsType<CheeseItemStrategy>(item);
     }
     
     [Fact]
     public void Build_BackstageName_BuildsBackstageItem()
     {
         // When
-        Item item = ItemFactory.BuildItem(new Item { Name = "Backstage passes to a TAFKAL80ETC concert" });
+        var item = StrategyFactory.BuildStrategy(new Item { Name = "Backstage passes to a TAFKAL80ETC concert" });
 
         // When
-        Assert.IsType<BackstageItem>(item);
+        Assert.IsType<BackstageItemStrategy>(item);
     }
     
     [Fact]
     public void Build_LegendaryName_BuildsLegendaryItem()
     {
         // When
-        Item item = ItemFactory.BuildItem(new Item { Name = "Sulfuras, Hand of Ragnaros" });
+        var item = StrategyFactory.BuildStrategy(new Item { Name = "Sulfuras, Hand of Ragnaros" });
 
         // When
-        Assert.IsType<LegendaryItem>(item);
+        Assert.IsType<LegendaryItemStrategy>(item);
     }
 }
